@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #ffb6c1 0%, #ffc0cb 50%, #ffd1dc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    border-radius: 50px 50px 30px 30px;
+    padding: 30px 30px 20px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    border: 5px solid white;
+}
+
+/* Cabeçalho Hello Kitty */
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.hello-kitty-img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 5px 10px rgba(255, 105, 180, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    color: #ff69b4;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 2px 2px 0 white;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #ff8da1;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Nuvens decorativas */
+.cloud {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cloud-1 {
+    top: 20px;
+    left: 10px;
+    animation: moveCloud 15s linear infinite;
+}
+
+.cloud-2 {
+    bottom: 20px;
+    right: 10px;
+    font-size: 60px;
+    animation: moveCloud 20s linear infinite reverse;
+}
+
+.cloud-3 {
+    top: 40%;
+    right: 5px;
+    font-size: 35px;
+    animation: moveCloud 12s linear infinite;
+}
+
+@keyframes moveCloud {
+    0% { transform: translateX(-20px); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(-20px); }
+}
+
+/* Área de busca */
+.search-box {
+    background-color: white;
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+    margin-bottom: 20px;
+    border: 2px solid #ffb6c1;
+    position: relative;
+    z-index: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    color: #ff69b4;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 3px solid #ffb6c1;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    transition: all 0.3s;
+    background-color: #fff0f5;
+    color: #ff69b4;
+    font-weight: 600;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff69b4;
+    background-color: #ffe4ec;
+    box-shadow: 0 0 15px #ffb6c1;
+}
+
+input::placeholder {
+    color: #ffb6c1;
+    font-weight: 300;
+}
+
+button {
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+}
+
+.button-icon {
+    font-size: 18px;
+}
+
+.helper-text {
+    color: #ffb6c1;
+    font-size: 12px;
+    margin-left: 10px;
+    font-style: italic;
+}
+
+/* Caixa de resultado */
+.result-box {
+    background-color: white;
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+    border: 2px solid #ffb6c1;
+    position: relative;
+    z-index: 1;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.result-header h2 {
+    color: #ff69b4;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.heart {
+    font-size: 24px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Estilo dos dados do endereço */
+.endereco-dados {
+    background-color: #fff0f5;
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.endereco-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 2px dotted #ffb6c1;
+}
+
+.endereco-item:last-child {
+    border-bottom: none;
+}
+
+.emoji-item {
+    font-size: 24px;
+    margin-right: 15px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.info-item {
+    flex: 1;
+}
+
+.info-item strong {
+    display: block;
+    color: #ff69b4;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.info-item span {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+/* Loading spinner */
+.loading {
+    text-align: center;
+    padding: 20px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffb6c1;
+    border-top: 5px solid #ff69b4;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #ff69b4;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Decoração Hello Kitty */
+.hello-kitty-decor {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.decor-item {
+    font-size: 20px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.decor-item:nth-child(2) { animation-delay: 0.2s; }
+.decor-item:nth-child(3) { animation-delay: 0.4s; }
+.decor-item:nth-child(4) { animation-delay: 0.6s; }
+.decor-item:nth-child(5) { animation-delay: 0.8s; }
+.decor-item:nth-child(6) { animation-delay: 1s; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #ff8da1;
+    font-size: 12px;
+}
+
+.footer-emoji {
+    font-size: 16px;
+    margin-top: 5px;
+    letter-spacing: 5px;
+}
+
+/* Mensagem de erro */
+.error-message {
+    background-color: #ffe4ec;
+    border: 2px solid #ff69b4;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    color: #ff1493;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    button {
+        justify-content: center;
+    }
+    
+    .cloud {
+        font-size: 30px;
+    }
+}
+
+/* Efeitos de hover fofos */
+.endereco-item:hover {
+    background-color: #ffe4ec;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
